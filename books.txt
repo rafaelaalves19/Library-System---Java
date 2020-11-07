@@ -1,0 +1,20 @@
+1,Harry Potter and the Philosophers Stone,J.K. Rowling,1997
+2,Harry Potter and the Chamber of Secrets,J.K. Rowling,1998
+3,Harry Potter and the Prisoner of Azkaban,J.K. Rowling,1999
+4,Harry Potter and the Goblet of Fire,J.K. Rowling,2000
+5,Harry Potter and the Order of the Phoenix,J.K. Rowling,2003
+6,Harry Potter and the Half-Blood Prince,J.K. Rowling,2005
+7,Harry Potter and the Deathly Hallows,J.K. Rowling,2007
+8,Percy Jacson The Lightning Thief,Rick Riordan,2005
+19,Percy Jacson The Sea of Monsters,Rick Riordan,2006
+10,Percy Jacson The Titan's Curse,Rick Riordan,2007
+11,Percy Jacson The Battle of the Labyrinth,Rick Riordan,2008
+12,Percy Jacson The Last Olympian,Rick Riordan,2009
+13,Insomnia,Stephen King,1994
+14,Bag of Bones,Stephen King,1998
+15,The girl who loved Tom Gordon,1999
+16,Black House,Stephen King,2001
+17,Doctor Sleep,Stephen King,2013
+18,End of Watch,Stephen King,2016
+19,Elevation,Stephen King,2018
+20,The Institute,Stephen King,2019
