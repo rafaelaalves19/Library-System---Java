@@ -21,7 +21,6 @@ public class Books {
         this.id = id;
         this.title = title;
         this.author = author;
-     
     }
 
 
@@ -29,10 +28,10 @@ public class Books {
     public String toString() {
         return "Id: " + getId() + "\n"
                 + "title: " + getTitle() + "\n"
-                + "author: " + getAuthor() + "\n";
-               
+                + "author: " + getAuthor() + "\n";               
     }
 
+    
     /**
      * @return the id
      */
@@ -40,6 +39,7 @@ public class Books {
         return id;
     }
 
+    
     /**
      * @param id the id to set
      */
@@ -47,6 +47,7 @@ public class Books {
         this.id = id;
     }
 
+    
     /**
      * @return the title
      */
@@ -54,6 +55,7 @@ public class Books {
         return title;
     }
 
+    
     /**
      * @param title the title to set
      */
@@ -61,6 +63,7 @@ public class Books {
         this.title = title;
     }
 
+    
     /**
      * @return the author
      */
@@ -68,16 +71,12 @@ public class Books {
         return author;
     }
 
+    
     /**
      * @param author the author to set
      */
     public void setAuthor(String author) {
         this.author = author;
     }
-
-    /**
-     * @return the year
-     */
- 
 
 }

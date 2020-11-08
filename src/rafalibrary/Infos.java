@@ -20,12 +20,13 @@ import java.util.ArrayList;
  * @author rafaelaalves
  */
 public class Infos {
-     public ArrayList<Books> loadBooks() throws FileNotFoundException {
-
+    
+    
+    //Method to load the complete books list
+    public ArrayList<Books> loadBooks() throws FileNotFoundException {
         FileInputStream file = new FileInputStream("books.txt");
         String strline = "";
-        ArrayList<Books> books = new ArrayList<Books>();
-
+        ArrayList<Books> books = new ArrayList<>();
         try ( BufferedReader br = new BufferedReader(new InputStreamReader(file))) {
             strline = br.readLine();
             while (strline != null) {
@@ -39,12 +40,12 @@ public class Infos {
         return books;
     }
 
+     
+    //Method to load all the readers
     public ArrayList<Readers> loadReaders() throws FileNotFoundException {
-
         FileInputStream file = new FileInputStream("readers.txt");
         String strline = "";
         ArrayList<Readers> readers = new ArrayList<Readers>();
-
         try ( BufferedReader br = new BufferedReader(new InputStreamReader(file))) {
             strline = br.readLine();
             while (strline != null) {
@@ -56,17 +57,15 @@ public class Infos {
             e.printStackTrace();
         }
         return readers;
-
     }
     
     
-    
+    //Method to list all the books which are borrowed
     public ArrayList<Borrows> BorrowsList(int id) throws FileNotFoundException {
         FileInputStream file = new FileInputStream("borrows.txt");
         String strline = "";
         ArrayList<Borrows> borrows = new ArrayList<Borrows>();
         ArrayList<Borrows> newList = new ArrayList<Borrows>();
-
         try ( BufferedReader br = new BufferedReader(new InputStreamReader(file))) {
             strline = br.readLine();
             while (strline != null) {
@@ -83,13 +82,10 @@ public class Infos {
             e.printStackTrace();
         }
         return borrows;
-
     }
-    
-    
-    
-    
+        
 
+    //Method to search a book by title
     public boolean searchBookByTitle(ArrayList<Books> book, String title) {
         boolean found = false;
         for (Books b : book) {
@@ -101,11 +97,11 @@ public class Infos {
         if (found == false) {
             System.out.println("Book not found");
         }
-
         return found;
-
     }
 
+    
+    //Method to search a book by author
     public boolean searchBookByAuthor(ArrayList<Books> book, String author) {
         boolean found = false;
         for (Books b : book) {
@@ -117,11 +113,11 @@ public class Infos {
         if (found == false) {
             System.out.println("Author not found");
         }
-
         return found;
+    } 
 
-    }
-
+    
+    //Method to search a reader by name 
     public boolean searchReaderByName(ArrayList<Readers> reader, String name) {
         boolean found = false;
         for (Readers r : reader) {
@@ -137,6 +133,8 @@ public class Infos {
         return found;
     }
 
+    
+    //Method to search a reader by Id 
     public boolean searchReaderById(ArrayList<Readers> reader, int id) {
         boolean found = false;
         for (Readers r : reader) {
@@ -152,8 +150,9 @@ public class Infos {
         return found;
     }
 
+    
+    //Method to list a book by title
     public ArrayList<Books> sortBooksByTitle(ArrayList<Books> books) {
-
         for (int i = 0; i < books.size(); i++) {
             for (int j = 0; j < books.size() -1; j++) {
                 if ( books.get(j).getTitle().compareTo(books.get(j + 1).getTitle())>0 ) {
@@ -167,8 +166,8 @@ public class Infos {
     }
     
     
+    //Method to list a book by author
     public ArrayList<Books> sortBooksByAuthor(ArrayList<Books> books) {
-
         for (int i = 0; i < books.size(); i++) {
             for (int j = 0; j < books.size() -1; j++) {
                 if ( books.get(j).getAuthor().compareTo(books.get(j + 1).getAuthor())>0 ) {
@@ -179,15 +178,11 @@ public class Infos {
             }
         }
         return books;
-    }
-
+    } 
     
     
-    
-   
-
-
-public ArrayList<Readers> sortReadersById(ArrayList<Readers> readers) {
+    //Method to list the readers by Id
+    public ArrayList<Readers> sortReadersById(ArrayList<Readers> readers) {
         for (int i = 0; i < readers.size(); i++) {
             for (int j = 0; j < readers.size() - 1; j++) {
                 if(readers.get(j).getId() > readers.get(j + 1).getId()){
@@ -201,8 +196,8 @@ public ArrayList<Readers> sortReadersById(ArrayList<Readers> readers) {
     }
 
 
-public ArrayList<Readers> sortReadersByName(ArrayList<Readers> readers) {
-
+    //Method to list the readers by name
+    public ArrayList<Readers> sortReadersByName(ArrayList<Readers> readers) {
         for (int i = 0; i < readers.size(); i++) {
             for (int j = 0; j < readers.size() -1; j++) {
                 if (readers.get(j).getName().compareTo(readers.get(j + 1).getName())>0 ) {
@@ -215,8 +210,9 @@ public ArrayList<Readers> sortReadersByName(ArrayList<Readers> readers) {
         return readers;
     }
 
-public String registerBorrow(String[] borrows) throws IOException {
 
+    //Method to borrow a book 
+    public String registerBorrow(String[] borrows) throws IOException {
         try {
             BufferedWriter writeBorrow = new BufferedWriter(new FileWriter("borrows.txt", true));
             writeBorrow.write(borrows[0] + "," + borrows[1] + "," + borrows[2] + "\n");
@@ -225,13 +221,12 @@ public String registerBorrow(String[] borrows) throws IOException {
             System.out.println("An error has ocurred");
             e.printStackTrace();
         }
-
         return "Sucessful borrow. Enjoy your reading!";
     }
 
 
-public String registerReturn(String[] returnArray) throws IOException {
-
+    //Method to return a book
+    public String registerReturn(String[] returnArray) throws IOException {
         try {
             BufferedWriter writeReturn = new BufferedWriter(new FileWriter("returns.txt", true));
             writeReturn.write(returnArray[0] + "," + returnArray[1] + "," + returnArray[2] + "\n");
@@ -240,8 +235,6 @@ public String registerReturn(String[] returnArray) throws IOException {
             System.out.println("An error has ocurred");
             e.printStackTrace();
         }
-
         return "Sucessful return. Thank you!";
     }
-
 }

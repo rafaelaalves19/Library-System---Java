@@ -9,6 +9,7 @@ package rafalibrary;
  *
  * @author rafaelaalves
  */
+
 public class Readers {
     private int id;
     private String name;
@@ -19,6 +20,7 @@ public class Readers {
         this.name = name;
         this.address = address;
     }
+    
     /**
      * @return the id
      */
@@ -26,6 +28,7 @@ public class Readers {
         return id;
     }
 
+    
     /**
      * @param id the id to set
      */
@@ -33,6 +36,7 @@ public class Readers {
         this.id = id;
     }
 
+    
     /**
      * @return the name
      */
@@ -40,6 +44,7 @@ public class Readers {
         return name;
     }
 
+    
     /**
      * @param name the name to set
      */
@@ -47,6 +52,7 @@ public class Readers {
         this.name = name;
     }
 
+    
     /**
      * @return the address
      */
@@ -54,12 +60,14 @@ public class Readers {
         return address;
     }
 
+    
     /**
      * @param address the address to set
      */
     public void setAddress(String address) {
         this.address = address;
     }
+    
     
     @Override
     public String toString (){
